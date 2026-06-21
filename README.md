@@ -49,16 +49,10 @@ pip install -r requirements.txt
 |------|-------------|--------|
 | Task 1 | EDA & Data Preprocessing | ✅ |
 | Task 2 | Chunking, Embedding & Vector Store | ✅ |
-| Task 3 | RAG Core Logic & Evaluation | ✅ |
-| Task 4 | Interactive Chat Interface | ✅ |
+
 
 ## Running the App
-
-```bash
-python app.py
-```
-
-Then open the URL shown in your terminal (default: http://localhost:7860).
+ Open the URL shown in your terminal (default:https://github.com/yenguandroid/rag-complaint-chatbot).
 
 ## Data
 
