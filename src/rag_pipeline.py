@@ -18,7 +18,10 @@ from langchain_groq                     import ChatGroq
 
 # ── Constants ──────────────────────────────────────────────────────────────────
 EMBEDDING_MODEL = "sentence-transformers/all-MiniLM-L6-v2"
-CHROMA_DIR      = "../vector_store/chroma"
+from pathlib import Path
+
+BASE_DIR = Path(__file__).resolve().parent.parent  # <-- FIX HERE
+CHROMA_DIR = str(BASE_DIR / "vector_store" / "chroma")
 COLLECTION_NAME = "cfpb_complaints"
 TOP_K           = 5
 GROQ_MODEL = "llama-3.1-8b-instant"   # ✅ current, fast, free
@@ -54,6 +57,14 @@ def load_embeddings():
 def load_vector_store(embeddings, persist_dir=CHROMA_DIR, collection_name=COLLECTION_NAME):
     """Load the pre-built ChromaDB vector store from Task 2."""
     print(f"Loading ChromaDB from: {persist_dir} ...")
+
+    print("Persist dir:", persist_dir)
+    import os
+
+    print("Absolute path:", os.path.abspath(persist_dir))
+
+    print("Collection:", collection_name)
+
     vectorstore = Chroma(
         collection_name=collection_name,
         embedding_function=embeddings,
