@@ -121,7 +121,7 @@ with gr.Blocks(
 
             chatbot = gr.Chatbot(
                 label="",
-                height=320,
+                height=220,
                 # bubble_full_width=False,
                 avatar_images=(
                     None,
